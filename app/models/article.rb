@@ -18,4 +18,12 @@ class Article < ActiveRecord::Base
      tags.join(", ")
    end
 
+   def viewed
+      if self.view_count != nil
+         self.view_count += 1
+      else
+         self.view_count = 0
+      end
+   end
+
 end
